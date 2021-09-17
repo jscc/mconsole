@@ -1,20 +1,37 @@
 {
-  "name": "log",
+  "name": "@jscc/mconsole",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Overridden console. Beautiful information tips ",
+  "main": "lib/console.esm.js",
+  "module": "lib/console.esm.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup -c rollup.config.js",
+    "version": "npm view publish_demo versions"
   },
+  "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://jscc:syncwe003@github.com/jscc/log.git"
+    "url": "git+https://github.com/jscc/mconsole.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "console",
+    "log",
+    "debug",
+    "color"
+  ],
+  "author": "wangxiaowei",
+  "email": "297278806@qq.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jscc/log/issues"
+    "url": "https://github.com/jscc/mconsole/issues"
   },
-  "homepage": "https://github.com/jscc/log#readme"
+  "homepage": "https://github.com/jscc/mconsole#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@rollup/plugin-typescript": "^8.2.5",
+    "rollup": "^2.56.3",
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^4.4.3"
+  }
 }

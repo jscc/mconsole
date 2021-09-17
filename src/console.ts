@@ -1,5 +1,10 @@
 import { ConfStruct } from "./setting"
 
+const TypeParam = {
+    'object': ' %O',
+    'string': ' %s',
+    'number': ' %d',
+}
 export const setup = (conf: ConfStruct[], methods: String[]) => {
     if (!conf || !methods) return
     methods.forEach((methodStr: String) => {
@@ -10,7 +15,9 @@ export const setup = (conf: ConfStruct[], methods: String[]) => {
                 const errInfo = err.stack?.split('at')[2]?.replace('console', 'MConsole');
                 const res = conf.find(item => errInfo?.match(item.match)) || conf[0];
                 args.unshift(' ' + res.name, ' \n ');
-                const palceholder = '%c' + [...args].fill(' %s').join('');
+                let palceholder = '%c'
+                args.forEach(p => palceholder += TypeParam[typeof p])
+                // const palceholder = '%c' + [...args].fill(' %s').join('');
                 // @ts-ignore
                 args = [palceholder, (res.style[methodStr] || res.style.log).join(';'), ...args];
                 args.push(`\n\n\t\t`, errInfo);

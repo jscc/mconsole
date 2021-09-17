@@ -1,6 +1,6 @@
 {
   "name": "@jscc/mconsole",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Overridden console. Beautiful information tips ",
   "main": "lib/console.esm.js",
   "module": "lib/console.esm.js",
@@ -31,7 +31,10 @@
     "@rollup/plugin-typescript": "^8.2.5",
     "rollup": "^2.56.3",
     "rollup-plugin-terser": "^7.0.2",
+    "tslib": "^2.3.1",
     "typescript": "^4.4.3"
   },
-  "files": ["lib"]
+  "files": [
+    "lib"
+  ]
 }

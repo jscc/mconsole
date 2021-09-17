@@ -6,8 +6,6 @@ export const MConsoleConf = conf
 
 export const MConsoleMethods = methods
 
-setup(conf, methods)
-
 export const useConf = (consoleConf:ConfStruct[] | any, consoleMethods:String[]) => {
     setup(consoleConf || conf, consoleMethods || methods)
 }
